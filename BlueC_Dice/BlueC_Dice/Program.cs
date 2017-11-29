@@ -6,7 +6,17 @@ namespace BlueC_Dice
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var dobbelsteen = new Dobbelsteen();
+
+            while (true)
+            {
+                dobbelsteen.Roll();
+
+                int waarde = dobbelsteen.GetValue();
+
+                Console.WriteLine(waarde);
+                Console.ReadLine();
+            }
         }
     }
 }
