@@ -16,6 +16,11 @@ namespace BlueC_Dice
         public Hand()
         {
             this.Dice1 = new Dobbelsteen();
+            this.Dice2 = new Dobbelsteen();
+            this.Dice3 = new Dobbelsteen();
+            this.Dice4 = new Dobbelsteen();
+            this.Dice5 = new Dobbelsteen();
+            this.Dice6 = new Dobbelsteen();
         }
 
         public void Werp()
@@ -23,15 +28,20 @@ namespace BlueC_Dice
             this.Dice1.Roll();
             this.Dice2.Roll();
             this.Dice3.Roll();
-
-            // en de rest mag je zelf doen.
+            this.Dice4.Roll();
+            this.Dice5.Roll();
+            this.Dice6.Roll();
         }
 
         public int GetValue()
         {
             // Geeft de waarde van alle dobbelstenen terug
             int waarde = this.Dice1.GetValue()
-                + this.Dice2.GetValue();
+                + this.Dice2.GetValue()
+                + this.Dice3.GetValue()
+                + this.Dice4.GetValue()
+                + this.Dice5.GetValue()
+                + this.Dice6.GetValue();
 
             // de rest mag je zelf doen.
 

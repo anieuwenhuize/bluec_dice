@@ -6,15 +6,15 @@ namespace BlueC_Dice
     {
         static void Main(string[] args)
         {
-            var dobbelsteen = new Dobbelsteen();
+            var hand = new Hand();
 
             while (true)
             {
-                dobbelsteen.Roll();
+                hand.Werp();
 
-                int waarde = dobbelsteen.GetValue();
+                int waarde = hand.GetValue();
 
-                Console.WriteLine(dobbelsteen);
+                Console.WriteLine(waarde);
                 Console.ReadLine();
             }
         }
