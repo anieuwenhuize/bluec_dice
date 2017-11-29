@@ -30,12 +30,48 @@ namespace BlueC_Dice
 
         public override string ToString()
         {
-            if(this.GetValue() == 1)
+            string[] displaynumbers = new string[]
             {
-                return $".";
-            }
+                $" -----\n\r "
+              + " |1  |\n\r "
+              + " |   |\n\r "
+              + " |  o|\n\r "
+              + " -----",
 
-            return $"2-6";
+                " ----- "
+              + " |o  |"
+              + " |   |"
+              + " |  o|"
+              + " -----",
+
+                " ----- "
+              + " |3  |"
+              + " |   |"
+              + " |  o|"
+              + " -----",
+
+                " ----- "
+              + " |4  |"
+              + " |   |"
+              + " |  o|"
+              + " -----",
+
+                " ----- "
+              + " |5  |"
+              + " |   |"
+              + " |  o|"
+              + " -----",
+
+                " ----- "
+              + " |o o|"
+              + " |o o|"
+              + " |o o|"
+              + " -----"
+            };
+
+            int index = this.GetValue() - 1;
+
+            return displaynumbers[index];
         }
     }
 }

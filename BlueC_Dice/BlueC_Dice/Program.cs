@@ -14,7 +14,7 @@ namespace BlueC_Dice
 
                 int waarde = dobbelsteen.GetValue();
 
-                Console.WriteLine(waarde);
+                Console.WriteLine(dobbelsteen);
                 Console.ReadLine();
             }
         }
