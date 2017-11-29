@@ -8,21 +8,34 @@ namespace BlueC_Dice
     {
         private int Waarde;
         private int AantalVlakken;
+        private Random Rand;
 
         public Dobbelsteen()
         {
             this.Waarde = 2;
-            AantalVlakken = 6;
+            this.AantalVlakken = 6;
+            this.Rand = new Random();
         }
 
         public void Roll()
         {
-            this.Waarde += 1;
+            int next = this.Rand.Next(1, 99);
+            this.Waarde += next;
         }
 
         public int GetValue()
         {
-            return (Waarde % AantalVlakken) + 1;
+            return (this.Waarde % this.AantalVlakken) + 1;
+        }
+
+        public override string ToString()
+        {
+            if(this.GetValue() == 1)
+            {
+                return $".";
+            }
+
+            return $"2-6";
         }
     }
 }
