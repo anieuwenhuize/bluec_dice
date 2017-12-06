@@ -128,6 +128,22 @@ namespace BlueC_Dice
             return result;
         }
 
+        // Extract Method!!
+        private string GeefSpecialeGevalOmschrijving()
+        {
+            if (IsYathzee())
+            {
+                return " YATHZEE!!";
+            }
+
+            if (IsGroteStraat())
+            {
+                return " Een grote straat!!!";
+            }
+
+            return "";
+        }
+
         public override string ToString()
         {
             // als er niets bijzonders is
@@ -141,17 +157,7 @@ namespace BlueC_Dice
                 result += $" {waarde}";
             }
 
-            if (IsYathzee())
-            {
-                result += " YATHZEE!!";
-            }
-
-            else if(IsGroteStraat())
-            {
-                result += " Een grote straat!!!";
-            }
-
-
+            result += GeefSpecialeGevalOmschrijving();
 
             return result;
         }
