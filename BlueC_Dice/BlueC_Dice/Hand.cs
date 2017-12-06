@@ -30,6 +30,31 @@ namespace BlueC_Dice
             //}
         }
 
+        private bool ZijnWaardesAaneengesloten()
+        {
+            var ordered = this.Dobbelstenen
+                .OrderBy(dobbelsteen => dobbelsteen.GetValue());
+
+            Dobbelsteen vorige = null;
+            foreach(Dobbelsteen dobbelsteen in this.Dobbelstenen)
+            {
+                if(vorige == null)
+                {
+                    vorige = dobbelsteen;
+                    continue;
+                }
+
+                if(!dobbelsteen.IsVerschilVan1(vorige))
+                {
+                    return false;
+                }
+
+                return true;
+            }
+
+            return false;
+        }
+
         private int GeefAantalVerschillende()
         {
             var aantalVerschillende =

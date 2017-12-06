@@ -28,6 +28,12 @@ namespace BlueC_Dice
             return (this.Waarde % this.AantalVlakken) + 1;
         }
 
+        public bool IsVerschilVan1(Dobbelsteen dobbelsteen)
+        {
+            int verschil = dobbelsteen.GetValue() - this.GetValue();
+            return verschil == 1 || verschil == -1;
+        }
+
         public override string ToString()
         {
             string[] displaynumbers = new string[]
