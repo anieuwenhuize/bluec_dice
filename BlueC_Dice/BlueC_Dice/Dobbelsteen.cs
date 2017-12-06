@@ -23,6 +23,11 @@ namespace BlueC_Dice
             this.Waarde += next;
         }
 
+        public void Roll(int gewensteWaarde)
+        {
+            this.Waarde = gewensteWaarde - 1;
+        }
+
         public int GetValue()
         {
             return (this.Waarde % this.AantalVlakken) + 1;

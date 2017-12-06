@@ -66,6 +66,11 @@ namespace BlueC_Dice
             return aantalVerschillende;
         }
 
+        public bool IsYathzee()
+        {
+            return this.GeefAantalVerschillende() == 1;
+        }
+
         public void Werp()
         {
             foreach(Dobbelsteen dobbelsteen 
@@ -75,7 +80,20 @@ namespace BlueC_Dice
             }
         }
 
-
+        public void Werp(
+            int waarde1,
+            int waarde2,
+            int waarde3,
+            int waarde4,
+            int waarde5
+            )
+        {
+            this.Dobbelstenen[0].Roll(waarde1);
+            this.Dobbelstenen[1].Roll(waarde2);
+            this.Dobbelstenen[2].Roll(waarde3);
+            this.Dobbelstenen[3].Roll(waarde4);
+            this.Dobbelstenen[4].Roll(waarde5);
+        }
 
         public int GetValue()
         {
@@ -115,6 +133,11 @@ namespace BlueC_Dice
             foreach(int waarde in waardes)
             {
                 result += $" {waarde}";
+            }
+
+            if (IsYathzee())
+            {
+                result += "YATHZEE!!";
             }
 
             return result;
