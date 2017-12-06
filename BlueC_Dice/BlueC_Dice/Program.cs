@@ -10,7 +10,7 @@ namespace BlueC_Dice
 
             while (true)
             {
-                hand.Werp(1, 1, 6, 1, 1);
+                hand.Werp(2, 3, 4, 5, 6);
 
                 Console.WriteLine(hand);
                 Console.ReadLine();

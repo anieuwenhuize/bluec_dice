@@ -71,6 +71,12 @@ namespace BlueC_Dice
             return this.GeefAantalVerschillende() == 1;
         }
 
+        public bool IsGroteStraat()
+        {
+            return this.GeefAantalVerschillende() == 5
+                && this.ZijnWaardesAaneengesloten();
+        }
+
         public void Werp()
         {
             foreach(Dobbelsteen dobbelsteen 
@@ -137,8 +143,15 @@ namespace BlueC_Dice
 
             if (IsYathzee())
             {
-                result += "YATHZEE!!";
+                result += " YATHZEE!!";
             }
+
+            else if(IsGroteStraat())
+            {
+                result += " Een grote straat!!!";
+            }
+
+
 
             return result;
         }
