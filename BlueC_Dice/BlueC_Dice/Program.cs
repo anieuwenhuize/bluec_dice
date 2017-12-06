@@ -12,9 +12,7 @@ namespace BlueC_Dice
             {
                 hand.Werp();
 
-                int waarde = hand.GetValue();
-
-                Console.WriteLine(waarde);
+                Console.WriteLine(hand);
                 Console.ReadLine();
             }
         }
