@@ -81,7 +81,18 @@ namespace BlueC_Dice
 
         public override string ToString()
         {
-            return base.ToString();
+            // als er niets bijzonders is
+            // alle onafhankelijke waarden laten zien
+            var waardes = this.Dobbelstenen
+                .Select(dobbelsteen => dobbelsteen.GetValue());
+
+            string result = "";
+            foreach(int waarde in waardes)
+            {
+                result += $" {waarde}";
+            }
+
+            return result;
         }
     }
 }
