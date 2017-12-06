@@ -31,6 +31,17 @@ namespace BlueC_Dice
             }
         }
 
+        private int GeefAantalVerschillende()
+        {
+            var aantalVerschillende =
+                this.Dobbelstenen
+                    .GroupBy(x => x.GetValue())
+                    .Select(x => x.First())
+                    .Count();
+
+            return aantalVerschillende;
+        }
+
         public void Werp()
         {
             foreach(Dobbelsteen dobbelsteen 
@@ -39,6 +50,8 @@ namespace BlueC_Dice
                 dobbelsteen.Roll();
             }
         }
+
+
 
         public int GetValue()
         {
